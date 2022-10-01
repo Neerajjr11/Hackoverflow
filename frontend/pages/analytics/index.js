@@ -62,7 +62,7 @@ export default function App(props) {
         branch: "All"
     })
     useEffect(()=>{
-        fetch("http://127.0.0.1:8000/api/get_college_analytics/?college=11")
+        fetch("http://127.0.0.1:8000/api/get_college_analytics/?college=1")
         .then(res=>res.json())
         .then(res=>{
             setStatistics([
