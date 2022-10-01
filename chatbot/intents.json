@@ -1,0 +1,95 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "cgpa",
+      "patterns": [
+        "What should be my cgpa for placements?",
+        "How high should my cgpa be for dream packages?",
+        "How much cgpa should I have for scholarship?",
+        "How high should my cgpa be for super dream packages?"
+      ],
+      "responses": [
+        "A Minimum of 8 is to maintained",
+        "Having above 9 will give edge over other students"
+      ]
+    },
+    {
+      "tag": "country",
+      "patterns": [
+        "Which college is the best in India?",
+        "Which college has best placements in India?",
+        "Which is the highest ranked college in India?"
+      ],
+      "responses": [
+        "IIT, NIT, BITS and VIT are the preferred top colleges in India but at the end your profile and hardwork is what matters",
+        "The Best college is India is IIT, NIT, BITS and VIT"
+      ]
+    },
+    {
+      "tag": "techskills",
+      "patterns": [
+        "What are the required skills for a software engineer?",
+        "Is Frontend enough to be a software engineer?"
+      ],
+      "responses": [
+        "The required skills expected of software engineer are FrontEnd, BackEnd and Data Structures and Algorithms and Problem Solving",
+        "A good software engineer is expected to be well versed with frontend, backend frameworks and be able to test and deploy softwares."
+      ]
+    },
+    {
+      "tag": "soft-skills",
+      "patterns": [
+        "What soft skills are required to get placed?",
+        "Is communication skill important?",
+        "Should I have leadership experience to get placed?"
+      ],
+      "responses": [
+        "Soft skills are essential for placements. One should have good communication, time management, problem solving, organizational skills, leadership experience etc",
+        "Good communication, time management, problem solving, organizational skills, leadership experience etc are essential for placements."
+      ]
+    },
+
+    {
+      "tag": "highers",
+      "patterns": [
+        "Should I go for placements or highers?",
+        "Is higher education worth it?",
+        "Should I consider higher education instead of placements?"
+      ],
+      "responses": [
+        "If research, academia is your forte and have no financial burden, you can consider higher education. If you want more of hands-on experience, you can go for placements."
+      ]
+    }
+  ]
+}
