@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
+
 import pandas as pd
 import numpy as np
 
@@ -27,7 +26,7 @@ for cols in internship_cols:
 
 if df.has_internship.cov(df.placed) < minimum:
     minimum = df.has_internship.cov(df.placed)
-    name = "has_nternship"
+    name = "has_internship"
     policy_name = "The University should mandate a 3 month internship in the students 2nd year of college for more hands on experience"
 elif df.backlogs.cov(df.placed) < minimum:
     minimum = df.backlogs.cov(df.placed)
@@ -46,7 +45,9 @@ else:
 unemployement = df['placed'] == 0
 
 unemployement_rate = unemployement.mean().round(4) * 100
-
+print(name)
+print(policy_name)
+print(unemployement_rate)
 
 
 
