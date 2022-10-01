@@ -8,10 +8,10 @@ app = Flask(__name__)
 def index_get():
     return render_template("base.html")
 
-@app.post("/predict")
+@app.get("/predict")
 def predict():
-    text = request.get_json().get("message")
-    
+    # text = request.get_json().get("message")
+    text= "hi"
     response = get_response(text)
     message = {"answer":response}
     return jsonify(message)
