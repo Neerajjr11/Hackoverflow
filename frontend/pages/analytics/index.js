@@ -86,7 +86,7 @@ export default function App(props) {
                     sscp: res['board']['sscp'][i],
                     hscp: res['board']['hscp'][i],
                     sat: res['board']['sat'][i],
-                    cgpa: res['board']['cgpa'][i]*10,
+                    cgpa: res['board']['cgpa'][i],
                     package: res['board']['package'][i]
                 })
             }
