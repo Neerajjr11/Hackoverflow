@@ -11,7 +11,12 @@ module.exports = {
 			'brown': '#2B332C',
       
 		},
-	  extend: {},
+	  extend: {
+		backgroundImage: {
+			'buildings-card': "url('/buildings-card.png')",
+			
+		  }
+	  },
 	},
 	plugins: [],
   }

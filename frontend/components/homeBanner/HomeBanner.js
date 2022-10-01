@@ -1,4 +1,5 @@
 import Button from "../button/Button";
+import Image from "next/image";
 
 const HomeBanner = () => {
   return (
@@ -9,6 +10,15 @@ const HomeBanner = () => {
       <div className="text-center">
         <Button className="">Find Out</Button>
       </div>
+	  <div className="w-screen mt-[150px]">
+	  {/* <Image
+              src="/home_banner.png"
+			  layout='fill'
+    		  objectFit='contain'
+              alt="PlaceINDIA Logo"
+			  draggable="false"
+            /> */}
+		</div>
     </>
   );
 };
