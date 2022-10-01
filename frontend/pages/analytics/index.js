@@ -383,7 +383,7 @@ export default function App(props) {
                     </ResponsiveContainer>
                     </div>
                 </div>
-                <div className="bg-[#fff] mt-24 mr-64 h-[200px] px-16 pt-6">
+                <div className="bg-[#fff] mt-24 mr-64 min-h-[200px] px-16 pt-6">
                     <div className="flex justify-between">
                     <h1 className="text-['Poppins'] mt-2 text-[2.5rem] font-semibold">Heading 1</h1>
                     <button className="bg-blue px-4 py-2 text-[#fff] rounded-xl text-[2rem]">Add Student</button>
@@ -393,7 +393,52 @@ export default function App(props) {
                         <input className="bg-white border-2 border-black rounded-md h-[30px] w-[250px] text-[1.2rem] pl-2" placeholder="Search"/> 
                     </div>
                     <div>
-
+                    <table>
+                        <tr className="text-[1.2rem] ">
+                        <th>S No.</th>
+                        <th>Gender</th>
+                        <th>Category</th>
+                        <th>SSC %</th>
+                        <th>SSC Board</th>
+                        <th>HSC %</th>
+                        <th>HSC Board</th>
+                        <th>HSC Stream</th>
+                        <th>Batch</th>
+                        <th>CGPA</th>
+                        <th>SAT Score</th>
+                        <th>Current Intern</th>
+                        <th>Hosteller</th>
+                        <th>Backlogs</th>
+                        <th>Placed</th>
+                        <th>Package</th>
+                        <th>Year of College</th>
+                        <th>College</th>
+                        </tr>
+                        {
+                            students.slice(0,50).map((val,index)=>(
+                                <tr>
+                                    <td>{index+1}</td>
+                                    <td>{val.gender}</td>
+                                    <td>{val.category}</td>
+                                    <td>{Number(val.sscp).toFixed(2)}</td>
+                                    <td>{val.ssc}</td>
+                                    <td>{Number(val.hscp).toFixed(2)}</td>
+                                    <td>{val.hsc}</td>
+                                    <td>{val.hsc_stream}</td>
+                                    <td>{val.batch}</td>
+                                    <td>{Number(val.cgpa).toFixed(2)}</td>
+                                    <td>{val.sat}</td>
+                                    <td>{val.has_internship}</td>
+                                    <td>{val.hosteller}</td>
+                                    <td>{val.backlogs}</td>
+                                    <td>{val.placed}</td>
+                                    <td>{Number(val.package).toFixed(2)}</td>
+                                    <td>{val.year_of_placement}</td>
+                                    <td>{collegeDetails['name']}</td>
+                                </tr>
+                            ))
+                        }
+                    </table>
                     </div>
                 </div>
             </div>

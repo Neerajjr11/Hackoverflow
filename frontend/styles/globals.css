@@ -28,5 +28,16 @@ input {
   all: unset;
 } 
 
+table{
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+tr,th, td{
+  padding: 1px;
+  border: 1px solid black;
+  font-size: 1.5rem;
+}
+
 
 
