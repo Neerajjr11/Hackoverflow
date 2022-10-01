@@ -1,6 +1,80 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+const cir_data = [
+    { name: 'Group A', value: 400 },
+    { name: 'Group B', value: 300 },
+    { name: 'Group C', value: 300 },
+    { name: 'Group D', value: 200 },
+  ];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const data = [
+    {
+      name: 'Page A',
+      uv: 4000,
+      pv: 2400,
+      amt: 2400,
+    },
+    {
+      name: 'Page B',
+      uv: 3000,
+      pv: 1398,
+      amt: 2210,
+    },
+    {
+      name: 'Page C',
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: 'Page D',
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: 'Page E',
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: 'Page F',
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: 'Page G',
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+  ];
+
 export default function App(props) {
     const [policy, setPolicy] = useState("after")
+    const [statistics, setStatistics] = useState(["...", "...", "...", "..."])
+    const [collegeDetails, setCollegeDetails]= useState({
+        college_id: 0,
+        name: "All",
+        region: "India", 
+        branch: "All"
+    })
+    useEffect(()=>{
+        fetch("http://127.0.0.1:8000/api/get_college_analytics/?college=11")
+        .then(res=>res.json())
+        .then(res=>{
+            setStatistics([
+                Number(res['statistics']['cgpa']).toFixed(2),
+                Number(res['statistics']['sat']).toFixed(2),
+                Number(res['statistics']['ranking']).toFixed(0),
+                Number(res['statistics']['placement_ratio']).toFixed(2),
+            ]);
+            console.log(res['college_details'])
+            setCollegeDetails(res['college_details'])
+        })
+    }, [])
     return (
         <div className="w-[100vw] min-h-[100vh] flex flex-col bg-[#E8F0FF]">
             <div className="flex self-center">
@@ -18,29 +92,29 @@ export default function App(props) {
             </div>
             <button className="self-center bg-black text-[2rem] mb-12 mt-12 rounded-2xl font-['Aclonica'] mt-3 shadow-md py-3 px-4 text-white bg-[#2B332C]">What is the policy?</button>
             <div className="ml-36">
-                <h1 className="text-[3rem] font-['Aclonica'] mb-16">Vellore Institute of Technology</h1>
+                <h1 className="text-[3rem] font-['Aclonica'] mb-16">{collegeDetails['name']}</h1>
                 <div className="flex">
                     <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
-                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Heading 1</h1>
-                        <p className="text-blue text-[7rem] font-bold">250</p>
+                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">CGPA</h1>
+                        <p className="text-blue text-[7rem] font-bold">{statistics[0]}</p>
                         <p className="text-['Poppins'] text-[1.5rem]">some random text</p>
                         <p className="text-['Poppins'] text-[1.2rem] text-[#5d5d5d]">some random text</p>
                     </div>
                     <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
-                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Heading 1</h1>
-                        <p className="text-blue text-[7rem] font-bold">250</p>
+                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">SAT Score</h1>
+                        <p className="text-blue text-[7rem] font-bold">{statistics[1]}</p>
                         <p className="text-['Poppins'] text-[1.5rem]">some random text</p>
                         <p className="text-['Poppins'] text-[1.2rem] text-[#5d5d5d]">some random text</p>
                     </div>
                     <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
-                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Heading 1</h1>
-                        <p className="text-blue text-[7rem] font-bold">250</p>
+                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">College Ranking</h1>
+                        <p className="text-blue text-[7rem] font-bold">{statistics[2]}</p>
                         <p className="text-['Poppins'] text-[1.5rem]">some random text</p>
                         <p className="text-['Poppins'] text-[1.2rem] text-[#5d5d5d]">some random text</p>
                     </div>
                     <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
-                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Heading 1</h1>
-                        <p className="text-blue text-[7rem] font-bold">250</p>
+                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Placement Ratio</h1>
+                        <p className="text-blue text-[7rem] font-bold">{statistics[3]}</p>
                         <p className="text-['Poppins'] text-[1.5rem]">some random text</p>
                         <p className="text-['Poppins'] text-[1.2rem] text-[#5d5d5d]">some random text</p>
                     </div>
@@ -48,6 +122,25 @@ export default function App(props) {
                 <div className="mt-[40px] flex">
                     <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Heading 1</h1>
+                        <ResponsiveContainer width="100%" height="85%">
+                            <AreaChart
+                            width={500}
+                            height={400}
+                            data={data}
+                            margin={{
+                                top: 10,
+                                right: 30,
+                                left: 0,
+                                bottom: 0,
+                            }}
+                            >
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <Tooltip />
+                            <Area type="monotone" dataKey="uv" stroke="#00f" fill="#584EFD" />
+                            </AreaChart>
+                        </ResponsiveContainer>
                     </div>
                     <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg">
                         <div className="w-[100%] border-b-black border-b-2 h-[48px]">
@@ -91,6 +184,22 @@ export default function App(props) {
                 <div className="mt-[40px] flex">
                     <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Heading 1</h1>
+                        <PieChart width={800} height={400}>
+        <Pie onClick={val=>console.log(val)}
+          data={cir_data}
+          cx={100}
+          cy={80}
+          innerRadius={50}
+          outerRadius={65}
+          fill="#8884d8"
+          paddingAngle={5}
+          dataKey="value"
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+      </PieChart>
                     </div>
                     <div className="flex flex-col w-[540px] h-[200px] mr-[150px]">
                         <div className="flex w-[100%] h-[32%] mb-[1.33%]">
