@@ -14,7 +14,7 @@ const InstitutionCard = (props) => {
           </div>
         </div>
         <div className=" flex flex-col justify-center content-center align-center">
-          <div className=" flex justify-center content-center bg-[#DFF6FF] rounded-[50%] w-[80px] h-[80px]">
+          <div className="ml-8 flex justify-center content-center bg-[#DFF6FF] rounded-[50%] w-[80px] h-[80px]">
             <div className="bg-blue rounded-[50%] w-[50px] h-[50px] m-auto justify-center align-center text-center"><span className="font-['aclonica'] font-[400] text-[4.2rem]">9</span></div>
 			
 		  </div>
