@@ -11,6 +11,7 @@ import {
 	Td,
 	TableCaption,
   } from "@chakra-ui/react"
+import DatamapsIndia from 'react-datamaps-india'
 
 const HomePage = () => {
 	return (
