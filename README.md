@@ -96,35 +96,59 @@ To achieve our goal, we made use of the following tools and languages,
 
 ##  Features and Interfaces
 * Data Analytics Dashboard
-<img  src="diagrams/dashboard.jpg"  alt="dashboard">
+<img  src="diagrams/dashboard1.jpeg"  alt="dashboard1">
+<img  src="diagrams/dashboard.jpeg"  alt="dashboard">
+<img  src="diagrams/dashboard2.jpeg"  alt="dashboard2">
 
 * Policy Generation
-<img  src="diagrams/policygen.jpg"  alt="policygen">
+<img  src="diagrams/policygen.jpeg"  alt="policygen">
 
 * Chat Bot for FAQs
-<img  src="diagrams/chatbot.jpg"  alt="chatbot">
+<img  src="diagrams/chatbot.jpeg"  alt="chatbot">
 
 * Resume Rater
-<img  src="diagrams/resumerater.jpg"  alt="resumerater">
+<img  src="diagrams/resumerater.jpeg"  alt="resumerater">
 
 <p align="right">(<a  href="#top">back to top</a>)</p>
 <!-- DISCUSSIONS -->
 
 ##  Discussions
 - Centralized Database
-  - Columns such as
-  - <img  src="diagrams/columns.jpg"  alt="columns">
-- Initial Data Analysis
-  - Cool stats
-  - <img  src="diagrams/dashboard.jpg"  alt="dashboard">
-- ML prediction
+  Columns include,
+  - gender
+  - category
+  - sscp (10th percentage)
+  - ssc (10th board)
+  - hscp (12th percentage)
+  - hsc (12th board)
+  - hsc_stream (12th stream science/biology/commerce)
+  - batch (year of joining degree)
+  - degree_p (cgpa)
+  - sat (standardized test scores)
+  - workex (previous work experience)
+  - hosteller 
+  - backlogs
+  - status (placed or not)
+  - package
+  - year_of_placement
+  - college
+
+- Populating the dataset
+  - Heatmap of dataset
+  - <img  src="diagrams/heatmap.png"  alt="heatmap">
+  - The heatmap gives us the correlation between two columns. Using this information we can see how if correlation increases with one feature, it decreases with the other, to maintain the correlation of the overall dataset. This is to prevent outliers and extreme variation. We do this to populate our dataset to show how scalabe our solution is.
+  
+- ML prediction before applying policy
   - rate of unemployability
-  - <img  src="diagrams/beforepolicy.jpg"  alt="beforepolicy">
-- Policy Generation
-  - policy
-  - <img  src="diagrams/policy.jpg"  alt="policy">
+  - <img  src="diagrams/cli1.png"  alt="beforepolicyrate">
+  - Status of placements
+  - <img  src="diagrams/guio1.png"  alt="beforepolicychart">
+
  - ML prediction after Applying Policy
    - rate of unemployability
-   - <img  src="diagrams/afterpolicy.jpg"  alt="afterpolicy">
+  - <img  src="diagrams/clio2.png"  alt="afterpolicyrate">
+  - Status of placements
+  - <img  src="diagrams/guio2.png"  alt="afterpolicychart">
+
  <p align="right">(<a  href="#top">back to top</a>)</p>
   
