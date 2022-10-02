@@ -1,32 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import Button from "../../components/button/Button";
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
-	const [collegeDetails, setCollegeDetails]= useState({
-        college_id: 0,
-        name: "All",
-        region: "India", 
-        branch: "All"
-    })
-
-	useEffect(()=>{
-        fetch("http://127.0.0.1:8000/api/get_colleges").then(res=>res.json())
-        .then(res=>{
-            setColleges(res.data)
-        });
-    }, [])
-
-	const [college, setColleges] = useState([]);
-    const [college_id, setCollegeId] = useState(1);
   return (
     <nav>
       <div className="max-w mx-auto px-4">
         <div className="flex">
-          <div className="hidden md:flex nav-left w-1/2 justify-center space-x-16 p-6 font-['poppins'] text-[2.4rem] font-[600]">
-            <div>Home</div>
-            <div>About Us</div>
-            <div>Contact Us</div>
+          <div className="hidden md:flex nav-left w-1/2 justify-center space-x-16 p-6 mt-12 font-['poppins'] text-[2.4rem] font-[600]">
+            <p className="cursor-pointer"><Link href="/"><div>Home</div></Link></p>
+            <p className="cursor-pointer"><Link href="/"><div>About Us</div></Link></p>
+            <p className="cursor-pointer"><Link href="/"><div>Contact Us</div></Link></p>
           </div>
           <div className="brand-name ">
             <Image
@@ -37,17 +22,14 @@ const Navbar = () => {
 			  draggable="false"
             ></Image>
           </div>
-          <div className="nav-right w-1/2 flex justify-center space-x-16 p-6">
-            <div>
-			<button className='rounded-[5px] shadow-md hover:shadow-xl text-[1.4rem] bg-[#584EFD] px-10 py-5 font-poppins font-md text-white py-2'>My Data</button>
+          <div className="nav-right w-1/2 flex justify-center space-x-16 p-16 m-6">
+            <div className="flex justify-center">
+            <Link href="/resume"><button className='font-["poppins"] rounded-[5px] shadow-md hover:shadow-xl text-[1.4rem] bg-blue px-4 mx-3 text-white'>Resume Checker</button></Link>
+            <Link href="/india"><button className='font-["poppins"] rounded-[5px] shadow-md hover:shadow-xl text-[1.4rem] bg-brown px-6 text-white'>Unemployment Rate</button></Link>
+            
 			</div>
 			<div className="w-1/3">
-			<select className="w-[30%] mr-60 rounded-xl border-0 bg-[#fff] h-[40px] text-[1.5rem]" onChange={e=>{
-                        setStatistics(["...", "...", "...", "..."])
-                        setCollegeId(e.target.value)
-                        }}>
-                        {college.map((val, index)=><option value={val.college_id}>{val.name} ({val.state})</option>)}
-                    </select>
+			
             </div>
 			
           </div>

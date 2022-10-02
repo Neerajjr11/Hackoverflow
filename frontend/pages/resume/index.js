@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, XAxis, BarChart, Bar, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Button from '../../components/button/Button';
 
 const answers = [
     "Add more keywords to your resume", 
@@ -125,7 +127,7 @@ export default function App(props){
                 <h3 className='text-[1.5rem] py-1'>4. {answers[arr[3]]}</h3>
                 <h3 className='text-[1.5rem] py-1'>5. {answers[arr[4]]}</h3>
             </div>
-            <div className='bg-[#fff] hover:shadow-lg duration-200 shadow-md w-[85%] h-[400px] px-6 py-10 self-center justify-center flex flex-col'>
+            <div className='bg-[#fff] hover:shadow-lg duration-200 shadow-md w-[85%] h-[400px] px-6 py-10 self-center justify-center flex flex-col' style={{fontSize:12}}>
                 <h1 className="font-['Aclonica'] text-[2rem] mb-24 text-[1.5rem]">Your resume scored <b>{count}</b> out of <b>100</b></h1>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart width={150} height={150} data={score.splice(0, 10)}>
@@ -136,8 +138,15 @@ export default function App(props){
                     <Bar dataKey="value" fill="blue" />
                     </BarChart>
                 </ResponsiveContainer>
+                
             
             </div>
+        <Link href="/analytics">
+            <div className='self-center mt-10 cursor-pointer'>
+
+          <Button className="self-center ml-[45%]">We May Help!</Button>
+            </div>
+          </Link>
         </div>)}
         </>
     );

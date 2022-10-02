@@ -11,11 +11,11 @@ const TopInstitutes = () => {
         Lorem ipsum dolor sit amet, consectetur adipisci elit vel maximus
       </h3>
       <div className="grid grid-cols-3 gap-4 mx-[12rem]">
-			<InstitutionCard college="VIT Chennai" nirf="9" placement="40" avgSalary="62"/>
-			<InstitutionCard college="VIT Chennai" nirf="9" placement="40" avgSalary="62"/>
-			<InstitutionCard college="VIT Chennai" nirf="9" placement="40" avgSalary="62"/>
-			<InstitutionCard college="VIT Chennai" nirf="9" placement="40" avgSalary="62"/>
-			<InstitutionCard college="VIT Chennai" nirf="9" placement="40" avgSalary="62"/>
+			<InstitutionCard college="IIT Mumbai" nirf="1" placement="51" avgSalary="2.5"/>
+			<InstitutionCard college="IIT Khadakpur" nirf="2" placement="54" avgSalary="3.4"/>
+			<InstitutionCard college="University of Delhi" nirf="3" placement="51" avgSalary="2.9"/>
+			<InstitutionCard college="IIT Chennai" nirf="4" placement="47" avgSalary="2.7"/>
+			<InstitutionCard college="IIT Delhi" nirf="5" placement="52" avgSalary="2.7"/>
 	  </div>
     </div>
   );

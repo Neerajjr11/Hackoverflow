@@ -1,8 +1,5 @@
 from flask import Flask, render_template , request, jsonify
-<<<<<<< HEAD
 from flask_cors import CORS, cross_origin
-=======
->>>>>>> d772a91b4e5959a22fc2b2df59f43f1c03aa9757
 from chat import get_response
 
 app = Flask(__name__)
@@ -18,11 +15,7 @@ def index_get():
 @cross_origin()
 def predict():
     # text = request.get_json().get("message")
-<<<<<<< HEAD
     text= request.args.get("data")
-=======
-    text = request.args.get("data")
->>>>>>> d772a91b4e5959a22fc2b2df59f43f1c03aa9757
     response = get_response(text)
     message = {"answer":response}
     return jsonify(message)

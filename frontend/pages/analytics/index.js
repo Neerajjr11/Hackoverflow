@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
+import Navbar from '../../components/navbar/Navbar';
 import { AreaChart, Area, XAxis, YAxis, Legend,Bar, BarChart, CartesianGrid, ScatterChart, Scatter, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 const cir_data = [
-    { name: 'Group A', value: 400 },
-    { name: 'Group B', value: 300 },
-    { name: 'Group C', value: 300 },
-    { name: 'Group D', value: 200 },
+    { name: 'Male', value: 400+Math.floor(Math.random()*30) },
+    { name: 'Female', value: 300+Math.floor(Math.random()*50) },
   ];
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const data = [
@@ -53,6 +52,10 @@ const data = [
   ];
 
 export default function App(props) {
+    const cir_data = [
+        { name: 'Male', value: 400+Math.random()*30 },
+        { name: 'Female', value: 300+Math.random()*50 },
+      ];
     const [policy, setPolicy] = useState("after")
     const [statistics, setStatistics] = useState(["...", "...", "...", "..."])
     const [collegeDetails, setCollegeDetails]= useState({
@@ -107,6 +110,7 @@ export default function App(props) {
     }, [])
     return (
         <div className="w-[100vw] min-h-[100vh] flex flex-col bg-[#E8F0FF]">
+            <Navbar/>
             <div className="flex self-center">
                 <h1 className="text-['Poppins'] text-[3rem] font-bold">Show Statistics</h1>
                 <div onClick={()=>{
@@ -120,7 +124,9 @@ export default function App(props) {
                 </div>
                 <h1 className="text-['Poppins'] text-[3rem] font-bold">Show Policy</h1>
             </div>
-            <button className="self-center bg-black text-[2rem] mb-12 mt-12 rounded-2xl font-['Aclonica'] mt-3 shadow-md py-3 px-4 text-white bg-[#2B332C]">What is the policy?</button>
+            
+            <button onClick={()=>setPolicy("after")}  className="self-center bg-black text-[2rem] mb-12 mt-12 rounded-2xl font-['Aclonica'] mt-3 shadow-md py-3 px-4 text-white bg-[#2B332C]">What is the policy?</button>
+  
             <div className="ml-36">
                 <div className="flex justify-between">
                     <h1 className="text-[3rem] font-['Aclonica'] mb-16">{collegeDetails['name']} ({collegeDetails['state']})</h1>
@@ -133,37 +139,42 @@ export default function App(props) {
                 </div>
                 {policy === "after" && (
 
-                    <div className="flex flex-col shadow-md duration-200 hover:shadow-xl justify-center bg-[#fff] mr-60 mb-6 pt-4 pl-4">
+                    <div className="flex flex-col shadow-md duration-200 hover:shadow-xl justify-center bg-[#fff] mr-60 mb-6 px-[10rem] py-[5rem] ">
                     <h1 className="text-[3rem] font-['Aclonica'] mb-16">Suggested Policy</h1>
-                    <h3 className="text-[1.8rem] font-['Aclonica'] mb-16">Target Variable: {pol.name}</h3>
-                    <h3 className="text-[1.8rem] font-['Aclonica'] mb-16">Policy: {pol.policy_name}</h3>
-                    <h3 className="text-[1.8rem] font-['Aclonica'] mb-16">UnEmployment Rate: {pol.unemployment_rate}</h3>
+                    <p className="font-['EB Garamond'] text-[2rem]">This policy serves as a probable solution to address the problem of unemployability. The policy provides a way to boost and accommodate students whose profiles do not qualify for employment. The policy applies to all institutes and universities registered in the central database. All educational institutes, technical and business universities, included must adhere to the policy and guidelines below. 
+In order to facilitate better employment rates, the policy will be extended to all students who demonstrate both the ability to bag a placement package and those with rejections. Policies will be determined by analysing the database and comparing differentiating factors that affect placement using machine learning algorithms. The differentiating factors include degree percentage, EPT scores, whether the candidate has work experience or not.
+The policy will also be periodically reviewed and re-evaluated based on addition of new records to the central database. It is the responsibility of the policy execution authorities to authorise and supervise the execution of said policies.</p>
+                    <div className="my-5">
+                    <h3 className="text-[2rem] font-['raleway'] my-3"><span className="font-[800] font-black">Target Variable: </span><span className="">{pol.name}</span></h3>
+                    <h3 className="text-[2rem] font-['raleway'] my-3"><span className="font-[800] font-black">Policy: </span>{pol.policy_name}</h3>
+                    <h3 className="text-[2rem] font-['raleway'] my-3"><span className="font-[800] font-black">Unemployment Rate: </span> {pol.unemployment_rate}</h3>
+                    </div>
                 </div>
                     )}
                 <div className="flex">
-                    <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
+                    <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 rounded-[5px]">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">CGPA</h1>
                         <p className="text-blue text-[7rem] font-bold">{statistics[0]}</p>
-                        <p className="text-['Poppins'] text-[1.5rem]">Aggregate score</p>
+                        <p className="text-['Poppins'] text-[1.5rem] font-semibold">Aggregate score</p>
                     </div>
-                    <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
+                    <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 rounded-[5px]">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">SAT Score</h1>
                         <p className="text-blue text-[7rem] font-bold">{statistics[1]}</p>
-                        <p className="text-['Poppins'] text-[1.5rem]">Average college SAT Score</p>
+                        <p className="text-['Poppins'] text-[1.5rem] font-semibold">Average SAT Score</p>
                     </div>
-                    <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
+                    <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 rounded-[5px]">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">College Ranking</h1>
                         <p className="text-blue text-[7rem] font-bold">{statistics[2]}</p>
-                        <p className="text-['Poppins'] text-[1.5rem]">NIRF rankingof college</p>
+                        <p className="text-['Poppins'] text-[1.5rem] font-semibold">NIRF Rank</p>
                     </div>
-                    <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
+                    <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 rounded-[5px]">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Placement Ratio</h1>
                         <p className="text-blue text-[7rem] font-bold">{statistics[3]}</p>
-                        <p className="text-['Poppins'] text-[1.5rem]">Employed/ UnEmployed Ratio</p>
+                        <p className="text-['Poppins'] text-[1.5rem] font-semibold">Employed/UnEmployed Ratio</p>
                     </div>
                 </div>
                 <div className="mt-[40px] flex">
-                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6">
+                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 rounded-[5px]" style={{fontSize: 13}}>
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Yearly Graph</h1>
                         <ResponsiveContainer width="100%" height="85%">
                             <AreaChart
@@ -185,51 +196,51 @@ export default function App(props) {
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
-                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg">
-                        <div className="w-[100%] border-b-black border-b-2 h-[32px]">
+                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg rounded-[5px]">
+                        <div className="w-[100%] border-b-black border-b-[1px] h-[32px]">
                             <div className="flex justify-between">
                                 <div>
-                                    <p className="text-[1.5rem] mt-2 ml-6">2015</p>
+                                    <p className="font-['poppins'] font-semibold text-[1.5rem] mt-2 ml-6">2015</p>
                                 </div>
                                 <div className="text-[2rem] mr-6">{yearlyGraph[0].value}</div>
                             </div>
                         </div>
-                        <div className="w-[100%] border-b-black border-b-2 h-[32px]">
+                        <div className="w-[100%] border-b-black border-b-[1px] h-[32px]">
                             <div className="flex justify-between">
                                 <div>
-                                    <p className="text-[1.5rem] mt-2 ml-6">2016</p>
+                                    <p className="font-['poppins'] font-semibold text-[1.5rem] mt-2 ml-6">2016</p>
                                 </div>
                                 <div className="text-[2rem] mr-6">{yearlyGraph[1].value}</div>
                             </div>
                         </div>
-                        <div className="w-[100%] border-b-black border-b-2 h-[32px]">
+                        <div className="w-[100%] border-b-black border-b-[1px] h-[32px]">
                             <div className="flex justify-between">
                                 <div>
-                                    <p className="text-[1.5rem] mt-2 ml-6">2017</p>
+                                    <p className="font-['poppins'] font-semibold text-[1.5rem] mt-2 ml-6">2017</p>
                                 </div>
                                 <div className="text-[2rem] mr-6">{yearlyGraph[2].value}</div>
                             </div>
                         </div>
-                        <div className="w-[100%] border-b-black border-b-2 h-[32px]">
+                        <div className="w-[100%] border-b-black border-b-[1px] h-[32px]">
                             <div className="flex justify-between">
                                 <div>
-                                    <p className="text-[1.5rem] mt-2 ml-6">2018</p>
+                                    <p className="font-['poppins'] font-semibold text-[1.5rem] mt-2 ml-6">2018</p>
                                 </div>
                                 <div className="text-[2rem] mr-6">{yearlyGraph[4].value}</div>
                             </div>
                         </div>
-                        <div className="w-[100%] border-b-black border-b-2 h-[31px]">
+                        <div className="w-[100%] border-b-black border-b-[1px] h-[31px]">
                             <div className="flex justify-between">
                                 <div>
-                                    <p className="text-[1.5rem] mt-2 ml-6">2019</p>
+                                    <p className="font-['poppins'] font-semibold text-[1.5rem] mt-2 ml-6">2019</p>
                                 </div>
                                 <div className="text-[2rem] mr-6">{yearlyGraph[5].value}</div>
                             </div>
                         </div>
-                        <div className="w-[100%] border-b-black border-b-2 h-[30px]">
+                        <div className="w-[100%] h-[30px]">
                             <div className="flex justify-between">
                                 <div>
-                                    <p className="text-[1.5rem] mt-2 ml-6">2020</p>
+                                    <p className="font-['poppins'] font-semibold text-[1.5rem] mt-2 ml-6">2020</p>
                                 </div>
                                 <div className="text-[2rem] mr-6">{yearlyGraph[3].value}</div>
                             </div>
@@ -237,14 +248,16 @@ export default function App(props) {
                     </div>
                 </div>
                 <div className="mt-[40px] flex">
-                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6">
-                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Heading 1</h1>
+                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6" style={{fontSize: 13}}>
+                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Gender Ratio (Placements)</h1>
                         <PieChart width={800} height={400}>
+                            <Legend />
+                            <Tooltip />
                             <Pie onClick={val=>console.log(val)}
                             data={cir_data}
                             cx={100}
                             cy={80}
-                            innerRadius={50}
+                            innerRadius={0}
                             outerRadius={65}
                             fill="#8884d8"
                             paddingAngle={5}
@@ -269,8 +282,8 @@ export default function App(props) {
                                 setYearlyGraph(data);
                                 console.log(data)
                             }} className="bg-[#fff] mr-[2%] w-[49%] h-[100%] rounded-xl duration-100 hover:scale-105">
-                                <p className="text-[1.5rem] mt-2 ml-6">HSCP</p>
-                                <p className="text-[1.2rem] ml-6">Heading1</p>
+                                <p className="text-[1.5rem] font-['poppins'] font-semibold mt-2 ml-6">HSCP</p>
+                                <p className="text-[1.2rem] font-['poppins'] opacity-50 ml-6 rounded-[5px]">Heading1</p>
                             </div>
                             <div onClick={()=>{
                                 var data = []
@@ -283,8 +296,8 @@ export default function App(props) {
                                 setYearlyGraph(data);
                                 console.log(data)
                             }} className="bg-[#fff] w-[49%] h-[100%] rounded-xl duration-100 hover:scale-105">
-                                <p className="text-[1.2rem] mt-2 ml-6">SSCP</p>
-                                <p className="text-[0.9rem] ml-6">Heading1</p>
+                                <p className="text-[1.5rem] font-['poppins'] font-semibold mt-2 ml-6">SSCP</p>
+                                <p className="text-[1.2rem] font-['poppins'] opacity-50 ml-6 rounded-[5px]">Heading1</p>
 
                             </div>
                         </div>
@@ -299,9 +312,9 @@ export default function App(props) {
                                 }
                                 setYearlyGraph(data);
                                 console.log(data)
-                            }} className="bg-[#fff] mr-[2%] w-[49%] h-[100%] rounded-xl duration-100 hover:scale-105">
-                                <p className="text-[1.5rem] mt-2 ml-6">CGPA</p>
-                                <p className="text-[1.2rem] ml-6">Heading1</p>
+                            }} className="bg-[#fff] mr-[2%] w-[49%] h-[100%] rounded-[5px]">
+                                <p className="text-[1.5rem] font-['poppins'] font-semibold mt-2 ml-6">CGPA</p>
+                                <p className="text-[1.2rem] font-['poppins'] opacity-50 ml-6 rounded-[5px]">Heading1</p>
                             </div>
                             <div onClick={()=>{
                                 var data = []
@@ -314,8 +327,8 @@ export default function App(props) {
                                 setYearlyGraph(data);
                                 console.log(data)
                             }} className="bg-[#fff] w-[49%] h-[100%] rounded-xl duration-100 hover:scale-105">
-                                <p className="text-[1.2rem] mt-2 ml-6">SAT</p>
-                                <p className="text-[0.9rem] ml-6">Heading1</p>
+                                <p className="text-[1.5rem] font-['poppins'] font-semibold mt-2 ml-6">SAT</p>
+                                <p className="text-[1.2rem] font-['poppins'] opacity-50 ml-6 rounded-[5px]">Heading1</p>
 
                             </div>
                         </div>
@@ -331,19 +344,19 @@ export default function App(props) {
                                 setYearlyGraph(data);
                                 console.log(data)
                             }} className="bg-[#fff] mr-[2%] w-[49%] h-[100%] rounded-xl duration-100 hover:scale-105">
-                                <p className="text-[1.5rem] mt-2 ml-6">Package</p>
-                                <p className="text-[1.2rem] ml-6">Heading1</p>
+                                <p className="text-[1.5rem] font-['poppins'] font-semibold mt-2 ml-6">Package</p>
+                                <p className="text-[1.2rem] font-['poppins'] opacity-50 ml-6 rounded-[5px]">Heading1</p>
                             </div>
                             <div className="bg-[#fff] w-[49%] h-[100%] rounded-xl duration-100 hover:scale-105">
-                                <p className="text-[1.2rem] mt-2 ml-6">Heading1</p>
-                                <p className="text-[0.9rem] ml-6">Heading1</p>
+                                <p className="text-[1.5rem] font-['poppins'] font-semibold mt-2 ml-6">Heading1</p>
+                                <p className="text-[1.2rem] font-['poppins'] opacity-50 ml-6 rounded-[5px]">Heading1</p>
 
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="mt-[40px] flex">
-                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6">
+                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6" style={{fontSize: 13}}>
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">CGPA - Salary Graph</h1>
                         <ResponsiveContainer width="100%" height="100%">
                             <ScatterChart
@@ -364,11 +377,12 @@ export default function App(props) {
                             </ScatterChart>
                         </ResponsiveContainer>
                     </div>
-                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6">
-                    <ResponsiveContainer width="100%" height="100%">
+                    <div className="w-[540px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6" style={{fontSize: 13}}>
+                        <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">CGPA - Salary Graph</h1>
+                    <ResponsiveContainer width="100%" height="85%">
                         <BarChart
                         width={500}
-                        height={300}
+                        height={280}
                         data={board}
                         margin={{
                             top: 5,
