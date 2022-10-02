@@ -1,6 +1,6 @@
 import random
 import json
-
+import numpy as np
 import torch
 
 from model import NeuralNet
@@ -30,8 +30,8 @@ bot_name = "Neeraj"
 def get_response(msg):
     sentence = tokenize(msg)
     X = bag_of_words(sentence, all_words)
-    X = X.reshape(1, X.shape[0])
-    X = torch.from_numpy(X).to(device)
+    X = np.array(X.reshape(1, X.shape[0]))
+    X = torch.Tensor(X)
 
     output = model(X)
     _, predicted = torch.max(output, dim=1)
