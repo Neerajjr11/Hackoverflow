@@ -1,10 +1,12 @@
 import DatamapsIndia from 'react-datamaps-india';
+import styles from './india.module.css';
 export default function App(props){
     return (
         <div className='flex'>
         <div
           style={{
             flex: 1,
+            fontSize: "2rem",
             display: 'inline-block',
             position: 'relative',
             width: '100%',
@@ -20,109 +22,109 @@ export default function App(props){
                         value: 36
 					},
 					'Andhra Pradesh':{
-                        value: 346
+                        value: 36
 					},
 					'Arunanchal Pradesh':{
-                        value: 346
+                        value: 18
 					},
 					'Assam':{
-						value: 90
+						value: 57
 					},
 					'Bihar':{
-						value: 346
+						value: 77
 					},
 					'Chandigarh':{
-						value: 346
+						value: 67
 					},
 					'Chhattisgarh':{
-						value: 346
+						value: 65
 					},
 					'Dadara & Nagar Haveli':{
-						value: 346
+						value: 45
 					},
 					'Daman & Diu':{
-                        value: 346
+                        value: 36
 					},
 					'Delhi':{
-						value: 346
+						value: 23
 					},
 					'Goa':{
-                        value: 346
+                        value: 33
 					},
 					'Gujarat':{
-						value: 346
+						value: 29
 					},
 					'Haryana':{
-                        value: 346
+                        value: 67
 					},
 					'Himachal Pradesh':{
-                        value: 346
+                        value: 45
 					},
 					'Jammu & Kashmir':{
-						value: 346
+						value: 87
 					},
 					'Jharkhand':{
-						value: 346
+						value: 52
 					},
 					'Karnataka':{
-						value: 346
+						value: 36
 					},
 					'Kerala':{
-						value: 346
+						value: 34
 					},
 					'Lakshadweep':{
-						value: 346
+						value: 54
 					},
 					'Madhya Pradesh':{
-						value: 346
+						value: 36
 					},
 					'Maharashtra':{
-						value: 346
+						value: 26
 					},
 					'Manipur':{
-                        value: 346
+                        value: 46
 					},
 					'Meghalaya':{
-						value: 346
+						value: 38
 					},
 					'Mizoram':{
-						value: 346
+						value: 41
 					},
 					'Nagaland':{
-                        value: 346
+                        value: 45
 					},
 					'Odisha':{
-						value: 346
+						value: 46
 					},
 					'Puducherry':{
-						value: 346
+						value: 7
 					},
 					'Punjab':{
-						value: 346
+						value: 23
 					},
 					'Rajasthan':{
-						value: 346
+						value: 67
 					},
 					'Sikkim':{
-                        value: 346
+                        value: 21
 					},
 					'Tamil Nadu':{
-						value: 346
+						value: 17
 					},
 					'Telangana':{
-                        value: 346
+                        value: 23
 					},
 					'Tripura':{
-                        value: 346
+                        value: 43
 					},
 					'Uttar Pradesh':{
-						value: 346
+						value: 23
 					},
 					'Uttarakhand':{
-                        value: 346
+                        value: 36
 					},
 					'West Bengal':{
-                        value: 346
+                        value: 35
 					},
 				}}
 				hoverComponent={({ value }) => {
@@ -134,14 +136,15 @@ export default function App(props){
 					)
 				}}
 				mapLayout={{
-					legendTitle: 'Legend Title',
-					startColor: '#FFDAB9',
-					endColor: '#FF6347',
+					legendTitle: 'Unemployment Legend',
+                    title: "Statewise Unemployement Ratio",
+					startColor: 'green',
+					endColor: 'red',
 					hoverTitle: 'Count',
 					noDataColor: '#f5f5f5',
 					borderColor: '#8D8D8D',
 					hoverBorderColor: '#8D8D8D',
-					hoverColor: 'green',
+					hoverColor: '#584EFD',
 				}}
 				/>
                 </div>

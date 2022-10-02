@@ -1,51 +1,29 @@
 
 import pandas as pd
 import numpy as np
-
-
-df = pd.read_csv("placement_data.csv")
+df = pd.read_csv("dataset1.csv")
 minimum = float("inf")
-name = ""
+col_name = ""
 policy_name = ""
 
-placed_cols=["placed"]
-for cols in placed_cols:
-        df[cols] = df[cols].map({
-            'Yes' : 1, 
-            'No'  : 0
-        })
-
-internship_cols=["has_internship"]
-for cols in internship_cols:
-        df[cols] = df[cols].map({
-            'Yes' : 1, 
-            'No'  : 0
-        })
-
-
-
-if df.has_internship.cov(df.placed) < minimum:
-    minimum = df.has_internship.cov(df.placed)
-    name = "has_internship"
+if df.workex.cov(df.status) < minimum:
+    minimum = df.workex.cov(df.status)
+    col_name = "workex"
     policy_name = "The University should mandate a 3 month internship in the students 2nd year of college for more hands on experience"
-elif df.backlogs.cov(df.placed) < minimum:
-    minimum = df.backlogs.cov(df.placed)
-    name = "backlogs"
-    policy_name = "The University should provide counselling session regarding placements to bring awareness about the impact of backlogs in their career"
-elif df.sat.cov(df.placed) < minimum:
-    minimum = df.sat.cov(df.placed)
-    name = "sat"
-    policy_name = "The University should implement courses catered towards SAT Scores"
+elif df.etest_p.cov(df.status) < minimum:
+    minimum = df.etest_p.cov(df.status)
+    col_name = "etest_p"
+    policy_name = "The University should implement courses catered towards Training Skillsets"
 else:
-    minimum = df.cgpa.cov(df.placed)
-    name = "cgpa"
+    minimum = df.degree_p.cov(df.status)
+    col_name = "degree_p"
     policy_name = "The University should provide counselling session regarding placements to bring awareness about the impact of CGPA in their career"
     
 
-unemployement = df['placed'] == 0
+unemployement = df['status'] == 0
 
 unemployement_rate = unemployement.mean().round(4) * 100
-print(name)
+print(col_name)
 print(policy_name)
 print(unemployement_rate)
 

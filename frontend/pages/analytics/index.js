@@ -66,7 +66,8 @@ export default function App(props) {
     const [college_id, setCollegeId] = useState(1);
     const [yearly, setYearly] = useState({})
     const [yearlyGraph,  setYearlyGraph] = useState([0,0,0,0,0,0])
-    const [board, setBoard] = useState([])
+    const [board, setBoard] = useState([]);
+    const [pol, setPol] = useState({});
     useEffect(()=>{
         console.log("done")
         fetch(`http://127.0.0.1:8000/api/get_college_analytics/?college=${college_id}`)
@@ -86,12 +87,13 @@ export default function App(props) {
                     sscp: res['board']['sscp'][i],
                     hscp: res['board']['hscp'][i],
                     sat: res['board']['sat'][i],
-                    cgpa: res['board']['cgpa'][i],
+                    cgpa: res['board']['cgpa'][i]*10,
                     package: res['board']['package'][i]
                 })
             }
             console.log(boards)
             setBoard(boards)
+            setPol(res.policy)
             // console.log(res['college_details']) 
             setCollegeDetails(res['college_details'])
             setYearly(res['yearly'])
@@ -106,7 +108,7 @@ export default function App(props) {
     return (
         <div className="w-[100vw] min-h-[100vh] flex flex-col bg-[#E8F0FF]">
             <div className="flex self-center">
-                <h1 className="text-['Poppins'] text-[3rem] font-bold">Before Policy</h1>
+                <h1 className="text-['Poppins'] text-[3rem] font-bold">Show Statistics</h1>
                 <div onClick={()=>{
                     if(policy === "before"){
                         setPolicy("after")
@@ -116,7 +118,7 @@ export default function App(props) {
                 }} className="rounded-3xl flex mx-4 w-[75px] shadow-md h-[30px] bg-[#fff] self-center content-center">    
                     <div className="w-[25px] h-[25px] duration-200 rounded-[14px] self-center bg-blue" style={{marginLeft: policy==="before" ? 3: 48}}></div>
                 </div>
-                <h1 className="text-['Poppins'] text-[3rem] font-bold">After Policy</h1>
+                <h1 className="text-['Poppins'] text-[3rem] font-bold">Show Policy</h1>
             </div>
             <button className="self-center bg-black text-[2rem] mb-12 mt-12 rounded-2xl font-['Aclonica'] mt-3 shadow-md py-3 px-4 text-white bg-[#2B332C]">What is the policy?</button>
             <div className="ml-36">
@@ -129,30 +131,35 @@ export default function App(props) {
                         {college.map((val, index)=><option value={val.college_id}>{val.name} ({val.state})</option>)}
                     </select>
                 </div>
+                {policy === "after" && (
+
+                    <div className="flex flex-col shadow-md duration-200 hover:shadow-xl justify-center bg-[#fff] mr-60 mb-6 pt-4 pl-4">
+                    <h1 className="text-[3rem] font-['Aclonica'] mb-16">Suggested Policy</h1>
+                    <h3 className="text-[1.8rem] font-['Aclonica'] mb-16">Target Variable: {pol.name}</h3>
+                    <h3 className="text-[1.8rem] font-['Aclonica'] mb-16">Policy: {pol.policy_name}</h3>
+                    <h3 className="text-[1.8rem] font-['Aclonica'] mb-16">UnEmployment Rate: {pol.unemployment_rate}</h3>
+                </div>
+                    )}
                 <div className="flex">
                     <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">CGPA</h1>
                         <p className="text-blue text-[7rem] font-bold">{statistics[0]}</p>
-                        <p className="text-['Poppins'] text-[1.5rem]">some random text</p>
-                        <p className="text-['Poppins'] text-[1.2rem] text-[#5d5d5d]">some random text</p>
+                        <p className="text-['Poppins'] text-[1.5rem]">Aggregate score</p>
                     </div>
                     <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">SAT Score</h1>
                         <p className="text-blue text-[7rem] font-bold">{statistics[1]}</p>
-                        <p className="text-['Poppins'] text-[1.5rem]">some random text</p>
-                        <p className="text-['Poppins'] text-[1.2rem] text-[#5d5d5d]">some random text</p>
+                        <p className="text-['Poppins'] text-[1.5rem]">Average college SAT Score</p>
                     </div>
                     <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">College Ranking</h1>
                         <p className="text-blue text-[7rem] font-bold">{statistics[2]}</p>
-                        <p className="text-['Poppins'] text-[1.5rem]">some random text</p>
-                        <p className="text-['Poppins'] text-[1.2rem] text-[#5d5d5d]">some random text</p>
+                        <p className="text-['Poppins'] text-[1.5rem]">NIRF rankingof college</p>
                     </div>
                     <div className="w-[200px] h-[200px] mr-[150px] bg-[#fff] shadow-lg pl-6 duration-200 hover:shadow-2xl">
                         <h1 className="text-['Poppins'] mt-2 text-[2rem] font-semibold">Placement Ratio</h1>
                         <p className="text-blue text-[7rem] font-bold">{statistics[3]}</p>
-                        <p className="text-['Poppins'] text-[1.5rem]">some random text</p>
-                        <p className="text-['Poppins'] text-[1.2rem] text-[#5d5d5d]">some random text</p>
+                        <p className="text-['Poppins'] text-[1.5rem]">Employed/ UnEmployed Ratio</p>
                     </div>
                 </div>
                 <div className="mt-[40px] flex">
