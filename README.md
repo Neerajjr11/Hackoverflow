@@ -90,7 +90,7 @@ To achieve our goal, we made use of the following tools and languages,
  <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original-wordmark.svg"  alt="tailwindcss"  width="50"  height="50"/> <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"  alt="mongodb"  width="50"  height="50"/>  <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original-wordmark.svg"  alt="python"  width="50"  height="50"/>  <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg"  alt="django"  width="50"  height="50"/> <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original-wordmark.svg"  alt="pytorch"  width="50"  height="50"/>  <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original-wordmark.svg"  alt="express"  width="50"  height="50"/> <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original-wordmark.svg"  alt="express"  width="50"  height="50"/>  
  <p>
  and other technologies like,
- Google Auth, NLTK, Py pdf, Spacey for extracting keywords from pdfs, Gensim for NLP, Recharts, Machine Learning Algorithms like Logistic Regression, SVM, Artificial Neural Networks and so on.
+ Google Auth, NLTK, PyPdf2, SpaCy for extracting keywords from pdfs, Gensim for NLP, Recharts, Machine Learning Algorithms like Logistic Regression, SVM, Artificial Neural Networks and so on.
  <p/>
 <p align="right">(<a  href="#top">back to top</a>)</p>
 
