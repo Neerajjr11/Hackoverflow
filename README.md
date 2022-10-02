@@ -45,7 +45,139 @@
 
 
 <!-- GETTING STARTED -->
-##  Getting Started
+###  Getting Started
+```bash
+Data Analysis
+   |-- generate_dataset.ipynb
+   |-- unemployement_reduction.ipynb
+LICENSE
+ML
+   |-- Resume_Scorer.ipynb
+   |-- common.txt
+   |-- feature_importance.py
+   |-- generate_dataset.ipynb
+   |-- skills.txt
+   |-- unemployement_reduction.ipynb
+README.md
+backend
+   |-- cysapi
+   |   |-- api
+   |   |   |-- __init__.py
+   |   |   |-- __pycache__
+   |   |   |   |-- __init__.cpython-310.pyc
+   |   |   |   |-- urls.cpython-310.pyc
+   |   |   |   |-- views.cpython-310.pyc
+   |   |   |-- admin.py
+   |   |   |-- apps.py
+   |   |   |-- final.model
+   |   |   |-- gensim-3.8.3-cp39-cp39-win_amd64.whl
+   |   |   |-- migrations
+   |   |   |   |-- __init__.py
+   |   |   |-- models.py
+   |   |   |-- resume-aug2022.pdf
+   |   |   |-- tests.py
+   |   |   |-- urls.py
+   |   |   |-- views.py
+   |   |-- cysapi
+   |   |   |-- __init__.py
+   |   |   |-- __pycache__
+   |   |   |   |-- __init__.cpython-310.pyc
+   |   |   |   |-- settings.cpython-310.pyc
+   |   |   |   |-- urls.cpython-310.pyc
+   |   |   |   |-- wsgi.cpython-310.pyc
+   |   |   |-- asgi.py
+   |   |   |-- settings.py
+   |   |   |-- urls.py
+   |   |   |-- wsgi.py
+   |   |-- db.sqlite3
+   |   |-- final.model
+   |   |-- manage.py
+   |   |-- resume-aug2022.pdf
+   |-- requirements.txt
+chatbot
+   |-- __pycache__
+   |   |-- chat.cpython-310.pyc
+   |   |-- model.cpython-310.pyc
+   |   |-- nltk_utils.cpython-310.pyc
+   |-- app.py
+   |-- chat.py
+   |-- data.pth
+   |-- intents.json
+   |-- model.py
+   |-- nltk_utils.py
+   |-- static
+   |   |-- app.js
+   |   |-- style.css
+   |-- templates
+   |   |-- base.html
+   |-- train.py
+diagrams
+   |-- chatbot.jpeg
+   |-- cli1.png
+   |-- clio2.png
+   |-- dashboard.jpeg
+   |-- dashboard1.jpeg
+   |-- dashboard2.jpeg
+   |-- flowDiagram.jpg
+   |-- guio1.png
+   |-- guio2.png
+   |-- heatmap.png
+   |-- placeIndia.jpg
+   |-- resumerater.jpeg
+   |-- techArch.jpg
+frontend
+   |-- .eslintrc.json
+   |-- .gitignore
+   |-- README.md
+   |-- assets
+   |   |-- chatbox-icon.svg
+   |   |-- logo.png
+   |-- components
+   |   |-- button
+   |   |   |-- Button.js
+   |   |-- cards
+   |   |   |-- InstitutionCard.js
+   |   |-- homeBanner
+   |   |   |-- HomeBanner.js
+   |   |-- institutes
+   |   |   |-- TopInstitutes.js
+   |   |-- navbar
+   |   |   |-- Navbar.js
+   |-- next.config.js
+   |-- package-lock.json
+   |-- package.json
+   |-- pages
+   |   |-- _app.js
+   |   |-- analytics
+   |   |   |-- index.js
+   |   |-- index.js
+   |   |-- india
+   |   |   |-- index.js
+   |   |   |-- india.module.css
+   |   |-- resume
+   |   |   |-- index.js
+   |   |-- signIn
+   |   |   |-- index.js
+   |   |-- signUp
+   |   |   |-- index.js
+   |-- postcss.config.js
+   |-- public
+   |   |-- 1t-logo.png
+   |   |-- 1t.png
+   |   |-- 2t.png
+   |   |-- buildings-card.png
+   |   |-- favicon.ico
+   |   |-- home_banner.png
+   |   |-- vercel.svg
+   |-- styles
+   |   |-- Home.module.css
+   |   |-- globals.css
+   |-- tailwind.config.js
+   |-- yarn.lock
+node_modules
+   |-- .yarn-integrity
+yarn.lock
+```
 ###  Problem Statement
 * Colleges in India don't have a central database regarding campus placement in technical and business institutes and universities.
 * By mapping and collating the placement details from throughout the county, the percentage of unemployability, the average salary and benefits, and other details can be identified in various fields of education.
