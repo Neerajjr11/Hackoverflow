@@ -1,25 +1,130 @@
-### Hackoverflow
-This repository is for the project for the 24-Hour Hackathon named Hackoverflow conducted by CYSCOM.
-## Table of Contents
-- [Getting Started](#getting-started)
-- [Problem Statment](#problem-statement)
-- [About the Problem](#about-the-problem)
-- [Our Approach](#our-approach)
 
-## Getting Started
 
-## Problem Statement
+
+<!-- PROJECT LOGO -->
+
+<br />
+<div><a  href="#top"></a><div/>
+
+<img  src="diagrams/placeIndia.jpg"  alt="Logo" >
+
+  
+
+<h2 align="center">PlaceIndia</h2>
+
+<h3 align="center">Solution for Cyscom's HackOverflow Hackathon 2022</h3>
+ 
+   
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Neerajjr11/Hackoverflow?logo=github&style=for-the-badge)](https://github.com/Neerajjr11/Hackoverflow)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Neerajjr11/Hackoverflow?style=for-the-badge&logo=git)](https://github.com/Neerajjr11/Hackoverflow)
+[![Languages](https://img.shields.io/github/languages/count/Neerajjr11/Hackoverflow?style=for-the-badge)](https://github.com/Neerajjr11/Hackoverflow)
+</br>
+  
+<!-- TABLE OF CONTENTS -->
+<details>
+<summary>Table of Contents</summary>
+<ol>
+<li><a  href="#getting-started">Getting Started</a>
+<ul>
+<li><a  href="#problem-statement">Problem Statement</a></li>
+</ul>
+<ul>
+<li><a  href="#about-the-problem">About The Problem</a></li>
+</ul>
+<ul>
+<li><a  href="#our-approach">Our Approach</a></li>
+</ul>
+</li>
+<li><a  href="#flow-diagram">Flow Diagram</a></li>
+<li><a  href="#tech-architecture">Tech Architecture</a></li>
+<li><a  href="#built-with">Built With</a></li>
+<li><a  href="#features-and-interfaces">Features and Interfaces</a></li>
+<li><a  href="#discussions">Discussions</a></li>
+</ol>
+</details>
+
+
+<!-- GETTING STARTED -->
+##  Getting Started
+###  Problem Statement
 * Colleges in India don't have a central database regarding campus placement in technical and business institutes and universities.
 * By mapping and collating the placement details from throughout the county, the percentage of unemployability, the average salary and benefits, and other details can be identified in various fields of education.
 * Help the policy makers to come out with appropriate solutions through framing of policies, based on data from this database, for tackling the unemployability in the country.
-
-## About the Problem
+###  About The Problem
 * Unemployment in India is rising at an alarming rate in India, despite several technical and business institutes booming across the country.
-Though education level in recent years has improved, skill development is still a crucial issue.
+* Though education level in recent years has improved, skill development is still a crucial issue.
 * India has the largest population of youth in the world. Around 65 per cent of the population of India is under the age of 35, so the impact of the declining financial market and the lack of job opportunities has the worst effect in India.
-* Moreover there is no centralised database regarding campus placement in technical and business institutes, universities for policy makers to analyse and come out with appropriate solutions.
 
-## Our Approach
-* In this project by mapping and collating the placement details from throughout the country we create a centralised database, analyse the data and predict the differentiating factors that affect the unemployment rate the most. 
-* Further we propose a suitable policy to help counter the differentiating factor and predict the unemployment rate after applying the policy. 
-* Additionally we also provide a chat bot to assist students queries regarding university and placements, and a resume rater for students to identify where their profile among the expected skillset.
+###  Our Approach
+* Unemployment in India is rising at an alarming rate in India, despite several technical and business institutes booming across the country.
+* Though education level in recent years has improved, skill development is still a crucial issue.
+* India has the largest population of youth in the world. Around 65 per cent of the population of India is under the age of 35, so the impact of the declining financial market and the lack of job opportunities has the worst effect in India.
+<p align="right">(<a  href="#top">back to top</a>)</p>
+
+  
+  
+  
+
+<!-- ARCHITECTURE DIAGRAMS -->
+
+##  Flow Diagram
+
+<img  src="diagrams/flowDiagram.jpg"  alt="flowdiagram" >
+
+<p align="right">(<a  href="#top">back to top</a>)</p>
+
+  
+
+<!-- ARCHITECTURE DIAGRAMS -->
+
+##  Tech Architecture
+
+<img  src="diagrams/techArch.jpg"  alt="techArchitecture">
+
+<p align="right">(<a  href="#top">back to top</a>)</p>
+
+##  Built With
+To achieve our goal, we made use of the following tools and languages,
+<p align="left">
+<img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original-wordmark.svg"  alt="nextjs"  width="50"  height="50"/> 
+ <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original-wordmark.svg"  alt="tailwindcss"  width="50"  height="50"/> <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"  alt="mongodb"  width="50"  height="50"/>  <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original-wordmark.svg"  alt="python"  width="50"  height="50"/>  <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg"  alt="django"  width="50"  height="50"/> <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original-wordmark.svg"  alt="pytorch"  width="50"  height="50"/>  <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original-wordmark.svg"  alt="express"  width="50"  height="50"/> <img  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original-wordmark.svg"  alt="express"  width="50"  height="50"/>  
+ <p>
+ and other technologies like,
+ Google Auth, NLTK, PyPdf2, SpaCy for extracting keywords from pdfs, Gensim for NLP, Recharts, Machine Learning Algorithms like Logistic Regression, SVM, Artificial Neural Networks and so on.
+ <p/>
+<p align="right">(<a  href="#top">back to top</a>)</p>
+
+##  Features and Interfaces
+* Data Analytics Dashboard
+<img  src="diagrams/dashboard.jpg"  alt="dashboard">
+
+* Policy Generation
+<img  src="diagrams/policygen.jpg"  alt="policygen">
+
+* Chat Bot for FAQs
+<img  src="diagrams/chatbot.jpg"  alt="chatbot">
+
+* Resume Rater
+<img  src="diagrams/resumerater.jpg"  alt="resumerater">
+
+<p align="right">(<a  href="#top">back to top</a>)</p>
+<!-- DISCUSSIONS -->
+
+##  Discussions
+- Centralized Database
+  - Columns such as
+  - <img  src="diagrams/columns.jpg"  alt="columns">
+- Initial Data Analysis
+  - Cool stats
+  - <img  src="diagrams/dashboard.jpg"  alt="dashboard">
+- ML prediction
+  - rate of unemployability
+  - <img  src="diagrams/beforepolicy.jpg"  alt="beforepolicy">
+- Policy Generation
+  - policy
+  - <img  src="diagrams/policy.jpg"  alt="policy">
+ - ML prediction after Applying Policy
+   - rate of unemployability
+   - <img  src="diagrams/afterpolicy.jpg"  alt="afterpolicy">
+ <p align="right">(<a  href="#top">back to top</a>)</p>
+  
