@@ -151,4 +151,8 @@ To achieve our goal, we made use of the following tools and languages,
   - <img  src="diagrams/guio2.png"  alt="afterpolicychart">
 
  <p align="right">(<a  href="#top">back to top</a>)</p>
-  
+ 
+##  References
+- We have used this dataset as a base to populate our database.
+- https://www.kaggle.com/datasets/siddheshshivdikar/college-placement
+
